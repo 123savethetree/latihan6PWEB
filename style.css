@@ -1,0 +1,28 @@
+body {
+    background-image: url('TC.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    color: rgb(0, 85, 255);
+    text-align: center;
+  }
+  
+
+.container {
+    background-color: rgba(42, 39, 39, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+label{
+    color: white;
+}

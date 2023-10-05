@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Latihan Javascript PWEB B</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <div class="container">
+        <h2>Form Evaluasi Asdos</h2>
+        <form name="formLogin" action="daftar.php" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label>Nama</label>
+                <input type="text" name="nama" placeholder="Nama lengkap" class="form-control" required maxlength="40" minlength="3">
+            </div>
+            <div class="form-group">
+                <label>NRP</label>
+                <input type="NRP" name="NRP" placeholder="NRP Mahasiswa" class="form-control" required maxlength="10" minlength="10">
+                <small id="NRPHelp" class="form-text text-muted">Isi dengan Nomor Registrasi Pokok Mahasiswa</small>
+            </div>
+            <div class="form-group">
+                <label>Program Studi</label>
+                <select name="prodi" class="form-control">
+                    <option value="0">-</option>
+                    <option value="1">Teknik Informatika</option>
+                    <option value="2">Teknik Komputer</option>
+                    <option value="3">Teknik Elektro</option>
+                    <option value="4">Sistem Informasi</option>
+                    <option value="5">Teknik Biomedik</option>
+                    <option value="6">Teknologi Informasi</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Mata Kuliah</label>
+                <input type="text" name="matkul" placeholder="Mata Kuliah" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Kelas</label>
+                <select name="kelas" class="form-control">
+                    <option value="0">-</option>
+                    <option value="1">A</option>
+                    <option value="2">B</option>
+                    <option value="3">C</option>
+                    <option value="4">D</option>
+                    <option value="5">E</option>
+                    <option value="6">F</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Asisten Dosen</label>
+                <input type="text" name="Dosen" placeholder="Dosen Pengajar" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Performa Asisten Dosen</label>
+                <select name="performa" class="form-control">
+                    <option value="0">-</option>
+                    <option value="1">Sangat Kurang</option>
+                    <option value="2">Kurang</option>
+                    <option value="3">Cukup</option>
+                    <option value="4">Baik</option>
+                    <option value="5">Sangat Baik</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            if (document.forms["formLogin"]["nama"].value == "") {
+                alert("Nama Tidak Boleh Kosong");
+                document.forms["formLogin"]["nama"].focus();
+                return false;
+            }
+            if (document.forms["formLogin"]["NRP"].value == "") {
+                alert("NRP Tidak Boleh Kosong");
+                document.forms["formLogin"]["NRP"].focus();
+                return false;
+            }
+            if (document.forms["formLogin"]["prodi"].selectedIndex < 1) {
+                alert("Pilih Jurusan.");
+                document.forms["formLogin"]["prodi"].focus();
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
